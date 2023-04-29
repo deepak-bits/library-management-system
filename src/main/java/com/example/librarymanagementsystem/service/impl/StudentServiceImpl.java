@@ -2,6 +2,8 @@ package com.example.librarymanagementsystem.service.impl;
 
 import com.example.librarymanagementsystem.DTO.RequestDto.StudentRequestDto;
 import com.example.librarymanagementsystem.DTO.RequestDto.UpdateStudentMobRequestDto;
+import com.example.librarymanagementsystem.DTO.ResponseDto.CardResponseDto;
+import com.example.librarymanagementsystem.DTO.ResponseDto.StudentResponseDto;
 import com.example.librarymanagementsystem.DTO.ResponseDto.UpdateStudentMobResponseDto;
 import com.example.librarymanagementsystem.entity.Card;
 import com.example.librarymanagementsystem.entity.Student;
@@ -63,7 +65,25 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student getStudentById(int id) {
-        return studentRepository.findById(id).get();
+    public StudentResponseDto getStudentById(int id) {
+        Student student = studentRepository.findById(id).get();
+
+        // prepare response Dto
+        StudentResponseDto studentResponseDto = new StudentResponseDto();
+        studentResponseDto.setId(student.getId());
+        studentResponseDto.setName(student.getName());
+        studentResponseDto.setDepartment(student.getDepartment());
+        studentResponseDto.setAge(student.getAge());
+        studentResponseDto.setMobNo(student.getMobNo());
+
+        CardResponseDto cardResponseDto = new CardResponseDto();
+        cardResponseDto.setIssueDate(student.getCard().getIssueDate());
+        cardResponseDto.setCardStatus(student.getCard().getCardStatus());
+        cardResponseDto.setUpdatedOn(student.getCard().getUpdatedOn());
+        cardResponseDto.setValidTill(student.getCard().getValidTill());
+        cardResponseDto.setId(student.getCard().getId());
+
+        studentResponseDto.setCardResponseDto(cardResponseDto);
+        return studentResponseDto;
     }
 }
