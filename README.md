@@ -8,7 +8,7 @@ This document provides documentation for the backend APIs of the Library Managem
 
 ## Base URL
 
-The base URL for accessing the APIs is: `http://example.com/api/library`
+The base URL for accessing the APIs is: `http://localhost:8080/`
 
 ## APIs
 
