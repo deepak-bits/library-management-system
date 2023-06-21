@@ -16,16 +16,17 @@ public class AuthorServiceImpl implements AuthorService {
     @Override
     public String addAuthor(Author author) {
         authorRepository.save(author);
-        return "Author added successfully.";
+        return "Author added";
     }
 
     @Override
     public AuthorResponseDto getByEmail(String email) {
         Author author = authorRepository.findByEmail(email);
 
+        // prepare response Dto
         AuthorResponseDto authorResponseDto = new AuthorResponseDto();
-        authorResponseDto.setName(author.getName());
         authorResponseDto.setAge(author.getAge());
+        authorResponseDto.setName(author.getName());
 
         return authorResponseDto;
     }

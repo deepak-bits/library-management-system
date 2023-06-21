@@ -10,6 +10,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UpdateStudentMobRequestDto {
+
     private int id;
+
     private String mobNo;
 }

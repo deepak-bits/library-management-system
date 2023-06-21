@@ -31,7 +31,7 @@ public class Book {
 
     private int price;
 
-    private boolean issued = false;
+    private boolean isIssued;
 
     @ManyToOne
     @JoinColumn
@@ -43,4 +43,5 @@ public class Book {
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     List<Transaction> transactionList = new ArrayList<>();
+
 }

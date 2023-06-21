@@ -14,6 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class CardResponseDto {
+
     private int id;
 
     private Date issueDate;
@@ -23,4 +24,5 @@ public class CardResponseDto {
     private CardStatus cardStatus;
 
     private LocalDate validTill;
+
 }
