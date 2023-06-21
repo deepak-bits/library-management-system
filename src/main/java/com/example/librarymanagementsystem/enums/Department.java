@@ -6,5 +6,6 @@ public enum Department {
     ECE,
     MECH,
     CIVIL,
-    EEE
+    EEE,
+    BIOTECH
 }
