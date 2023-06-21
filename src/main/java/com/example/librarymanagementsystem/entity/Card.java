@@ -39,11 +39,12 @@ public class Card {
 
     @OneToOne
     @JoinColumn
-    Student student;
+    private Student student;
 
     @OneToMany(mappedBy = "card", cascade = CascadeType.ALL)
     List<Book> booksIssued = new ArrayList<>();
 
     @OneToMany(mappedBy = "card", cascade = CascadeType.ALL)
     List<Transaction> transactionList = new ArrayList<>();
+
 }

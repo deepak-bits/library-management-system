@@ -22,14 +22,4 @@ public class AuthorController {
     public AuthorResponseDto getAuthorByEmail(@RequestParam("email") String email) {
         return authorService.getByEmail(email);
     }
-    // delete a author by id
-
-    // update the author by id
-
-    // find a author by id
-
-    // find all the authors
-
-    // get all the authors of a particular age
-
 }

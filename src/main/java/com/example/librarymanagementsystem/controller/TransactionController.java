@@ -16,7 +16,7 @@ public class TransactionController {
     @Autowired
     TransactionService transactionService;
 
-    @PostMapping("/issue_book")
+    @PostMapping("/add")
     public IssueBookResponseDto issueBook(@RequestBody IssueBookRequestDto issueBookRequestDto) throws Exception {
         return transactionService.issueBook(issueBookRequestDto);
     }

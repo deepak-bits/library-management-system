@@ -29,5 +29,6 @@ public class Student {
     private String mobNo;
 
     @OneToOne(mappedBy = "student", cascade=CascadeType.ALL)
-    Card card;
+    private Card card;
+
 }

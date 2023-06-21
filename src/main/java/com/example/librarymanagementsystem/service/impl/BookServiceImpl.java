@@ -8,8 +8,6 @@ import com.example.librarymanagementsystem.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class BookServiceImpl implements BookService {
 
@@ -20,7 +18,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public String addBook(Book book) throws Exception {
         Author author;
-        try{
+        try {
             author = authorRepository.findById(book.getAuthor().getId()).get();
         } catch (Exception e) {
             throw new Exception("Author not present");
@@ -29,6 +27,6 @@ public class BookServiceImpl implements BookService {
         author.getBooks().add(book);
         book.setAuthor(author);
         authorRepository.save(author);
-        return "Book added successfully";
+        return "Book added";
     }
 }

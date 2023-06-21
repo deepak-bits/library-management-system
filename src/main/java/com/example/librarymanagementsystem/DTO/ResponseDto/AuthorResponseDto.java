@@ -12,5 +12,7 @@ import lombok.Setter;
 public class AuthorResponseDto {
 
     private String name;
+
     private int age;
+
 }
